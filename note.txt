@@ -6,3 +6,18 @@ npx json-server --watch data/db.json --port 8000
 /blogs/{id}     GET     Fetch a single blog
 /blogs          POST    Add a new blog
 /blogs/{id}     DELETE  Delete a blog
+
+Tutorial #17
+
+{blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />}
+
+how this run ?
+
+At the begining the blogs is null so left side of the && will not true,
+which means they do not consider the right side..
+After data fetched blogs will be true and then consider the right side also
+
+The code {blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />}
+uses short-circuit evaluation to conditionally render the BlogList component. Initially,
+when blogs is null or undefined, nothing is rendered. Once blogs is populated with data,
+the component is rendered.
